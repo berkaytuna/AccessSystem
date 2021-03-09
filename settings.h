@@ -27,6 +27,8 @@ class Settings : public QObject
     Q_PROPERTY(int dY READ dY WRITE setDY)
     Q_PROPERTY(int textY READ textY WRITE setTextY)
     Q_PROPERTY(int textS READ textS WRITE setTextS)
+    Q_PROPERTY(int dTypeOne READ dTypeOne WRITE setDTypeOne)
+    Q_PROPERTY(int dTypeTwo READ dTypeTwo WRITE setDTypeTwo)
 
 public:
     QString color() const { return _color; };
@@ -47,6 +49,8 @@ public:
     int dY() const { return _dY; };
     int textY() const { return _textY; };
     int textS() const { return _textS; };
+    int dTypeOne() const { return _dTypeOne; };
+    int dTypeTwo() const { return _dTypeTwo; };
 
     void setColor(QString inColor) { _color = inColor; };
     void setDColor(QString inColor) { _dColor = inColor; };
@@ -66,6 +70,8 @@ public:
     void setDY(int inY) { _dY = inY; };
     void setTextY(int inY) { _textY = inY; };
     void setTextS(int inS) { _textS = inS; };
+    void setDTypeOne(int inType) { _dTypeOne = inType; };
+    void setDTypeTwo(int inType) { _dTypeTwo = inType; };
 
 private:
     QString _color = "#7C1111";
@@ -86,4 +92,6 @@ private:
     int _dY = 35;
     int _textY = 260;
     int _textS = 18;
+    int _dTypeOne = 0;
+    int _dTypeTwo = 0;
 };

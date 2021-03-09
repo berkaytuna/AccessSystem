@@ -13,6 +13,8 @@ int main(int argc, char *argv[])
 
     settings.setDImg("file:C:/Users/Admin/Downloads/pics/door.png");
     settings.setDNum(2);
+    settings.setDTypeOne(1);
+    settings.setDTypeTwo(0);
 
     QGuiApplication app(argc, argv);
     QQmlApplicationEngine engine;

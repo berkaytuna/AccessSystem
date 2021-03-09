@@ -7,27 +7,38 @@ Window {
     visible: true
     title: qsTr("Hello World")
 
+    property alias state: page.state
+    property alias page: page
+
     Rectangle {
         id: page
-        color: settings.color
-
         width: parent.width; height: parent.height
 
-        Grid {
-            id: grid
-            anchors.horizontalCenter: parent.horizontalCenter
-            y: settings.dY;
-            rows: 1; columns: settings.rNum; spacing: settings.space
-            Door { dName: settings.dOne; visible: settings.dNum !== 0 }
-            Door { dName: settings.dTwo; visible: settings.dNum === 2 }
+        property alias viewDoors: viewDoors
+
+        ViewDoors { id: viewDoors; visible: false }
+        ViewInc { id: viewInc; visible: false }
+
+        viewDoors.onClicked: {
+            if (viewDoors.type === 1)
+                state = "viewInc"
         }
 
-        Text {
-            id: text
-            text: settings.text
-            anchors.horizontalCenter: parent.horizontalCenter
-            y: settings.textY
-            font.pointSize: settings.textS
-        }
+        state: "viewDoors"
+        states: [
+            State {
+                name: "initial"
+            },
+            State {
+                name: "viewDoors"
+                PropertyChanges { target: viewDoors; visible: true }
+                PropertyChanges { target: viewInc; visible: false }
+            },
+            State {
+                name: "viewInc"
+                PropertyChanges { target: viewDoors; visible: false }
+                PropertyChanges { target: viewInc; visible: true }
+            }
+        ]
     }
 }
