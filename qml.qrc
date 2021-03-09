@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>Cell.qml</file>
+        <file>Door.qml</file>
+        <file>Test.qml</file>
+        <file>TestForm.ui.qml</file>
+    </qresource>
+</RCC>
