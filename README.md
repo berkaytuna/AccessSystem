@@ -8,4 +8,4 @@ The embedded Qml application also hosts a server to communicate with the desktop
 
 Whole design is based on observer pattern, which would mean callbacks/delegates in other frameworks and signal/slot system in Qt. To avoid unnecessary long, clumsy code structure and endless chains of callbacks, i have also introduced a QSettings objects in both Qml embedded and C++ desktop application. All settings in Qml are controlled through this C++ object, which lets us to make changes whenever we want and wherever we want. The QSettings object is the key element of this design pattern, which does not respect any inheritance or signal/slot conventions, but behaves standalone. It is passed to every object through its constructor as a pointer. It is a live object, that is living outside of scopes of classes and their functions. A live settings object, whose parameters can be modified and will take effect instantly, any time, anywhere, accross both Qml and C++.
 
-Dependencies: Qt
+Dependencies: Qt, bcm2835
