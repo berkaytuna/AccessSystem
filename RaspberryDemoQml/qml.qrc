@@ -1,0 +1,20 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>ApplicationFlow.qml</file>
+        <file>ApplicationFlowForm.ui.qml</file>
+        <file>Door.qml</file>
+        <file>ViewDoors.qml</file>
+        <file>ViewInc.qml</file>
+        <file>images/door.png</file>
+        <file>images/minus.png</file>
+        <file>images/plus.png</file>
+        <file>Result.qml</file>
+        <file>images/rCross.png</file>
+        <file>images/rTick.png</file>
+        <file>images/massage.png</file>
+        <file>images/solarium.png</file>
+        <file>Restart.qml</file>
+        <file>images/restart.png</file>
+    </qresource>
+</RCC>
